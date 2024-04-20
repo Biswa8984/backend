@@ -1,9 +1,15 @@
-import dotenv from "dotenv";
+
 import mongoose from "mongoose";
 import { DB_NAME } from "./constants.js";
-import express from "express"
-import connectDB from "./db/index.js";
-dotenv.config({
-       path: './env'
-})
-connectDB()
+import express from "express";
+const connection= async()=>{
+    const URI="mongodb+srv://user20:test234@cluster0.rluykbd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    try {
+       await mongoose.connect(URI,{useUnifiedTopology:true,useNewUrlparser:true});
+       console.log("databse connected");
+    } catch (error) {
+        console.log("error is",error);
+    }
+}
+
+ connection();
