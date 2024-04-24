@@ -1,14 +1,15 @@
-import dotenv  from "dotenv";
+// import dotenv  from "dotenv";
+import 'dotenv/config'
 import mongoose from "mongoose";
 import express from "express";
-dotenv.config({
-    path:'./.env'
-})
+// dotenv.config({
+//     path:"./.env"
+// })
+
 const app=express();
 const connection= async()=>{
-    const URI="mongodb+srv://user20:test234@cluster0.rluykbd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     try {
-       await mongoose.connect(URI);
+       await mongoose.connect(process.env.MONGODB_URI);
        console.log("databse connected");
     } catch (error) {
         console.log("error is",error);
