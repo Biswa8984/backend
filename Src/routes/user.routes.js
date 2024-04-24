@@ -1,0 +1,16 @@
+import { upload } from "../middlewares/multers.middlewares";
+import { Router } from "express";
+import { registerUser } from "../controllers/user.controllers";
+const router=Router()
+router.route("/rsgister").post(
+    upload.fields([{
+        name:"avatar",
+        maxCount:1,
+    },
+    {
+        name:"coverImage",
+        maxCount:1,
+    }
+    ]),
+    registerUser)
+export default router

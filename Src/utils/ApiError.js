@@ -3,7 +3,7 @@ constructor(
     statuscode,
      message="something went wrong",
      errors=[],
-     statck=""
+     stack=""
 ){
     super(message)
     this.statuscode=statuscode
