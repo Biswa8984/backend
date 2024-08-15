@@ -1,11 +1,10 @@
-// import dotenv  from "dotenv";
-import 'dotenv/config'
-import mongoose from "mongoose";
-import express from "express";
+// import dotenv  from "dotenv";i
 // dotenv.config({
 //     path:"./.env"
 // })
-
+import express from 'express'
+import mongoose from "mongoose";
+import 'dotenv/config'
 const app=express();
 const connection= async()=>{
     try {
